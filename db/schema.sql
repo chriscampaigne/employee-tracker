@@ -1,9 +1,15 @@
+DROP DATABASE IF EXISTS employeesDB;
+
+CREATE DATABASE employeesDB;
+
+USE employeesDB;
+
 CREATE TABLE department (
     id: INT PRIMARY KEY,
     name: VARCHAR(30),
 )
 
-CREATE TABLE roles (
+CREATE TABLE role (
     id: INT PRIMARY KEY,
     title: VARCHAR(30),
     salary: DECIMAL,
