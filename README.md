@@ -23,6 +23,6 @@
   open in vscode, run application through command line
   ## Questions
   If you have any questions about this projects, please contact me directly at campaignemc@gmail.com. You can view more of my projects at https://github.com/chriscampaigne.
-  ## Screenshot
-  <img width="960" alt="codingquiz" src="https://drive.google.com/file/d/1O2jYOa23nkdpwL_tbacGnqOtVlZ55ghq/preview" width="640" height="480">
+  ## Link to video
+    https://drive.google.com/file/d/1O2jYOa23nkdpwL_tbacGnqOtVlZ55ghq/view
   
