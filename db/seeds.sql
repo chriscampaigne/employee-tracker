@@ -1,34 +1,40 @@
-USE employeesDB;
+USE employees;
+
+
 
 INSERT INTO department (name)
+VALUES ("Sales");
+INSERT INTO department (name)
+VALUES ("Engineering");
+INSERT INTO department (name)
+VALUES ("Finance");
+INSERT INTO department (name)
+VALUES ("Legal");
 
-VALUES  ('Sales'),
-        ('Engineering'),
-        ('Finance'),
-        ('Legal');
+INSERT INTO role (title, salary, department_id)
+VALUES ("Sales Lead", 100000, 1);
+INSERT INTO role (title, salary, department_id)
+VALUES ("Lead Engineer", 150000, 2);
+INSERT INTO role (title, salary, department_id)
+VALUES ("Software Engineer", 120000, 2);
+INSERT INTO role (title, salary, department_id)
+VALUES ("Accountant", 125000, 3);
+INSERT INTO role (title, salary, department_id)
+VALUES ("Legal Team Lead", 250000, 4);
 
-INSERT INTO roles (title,salary)
-
-VALUES
-        ('Sales Lead', '100000'),
-        ('Sales Person','80000'),
-        ('Lead Engineer','150000'),
-        ('Software Engineer','120000'),
-        ('Account Manager','160000'),
-        ('Accountant','125000'),
-        ('Legal Team Lead','250000'),
-        ('Lawyer','190000'),
-        
-        
-
-INSERT INTO employee (first_name,last_name,role_id,department_id)
-
-VALUES
-        ('Asuka','Langley','1','1'),
-        ('Rei','Ayanami', '1','1'),
-        ('Shinji','Ikari', '1','2'),
-        ('Misato','Katsuragi', '2','2'),
-        ('Ryoji','Kaji', '4','2'),
-        ('Mari','Makanami', '5','3'),
-        ('Kaworu','Nagisa', '6','3'),
-        ('Hikari','Horaki', '7','4'),
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES ("Asuka", "Langley", 1, 3);
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES ("Rei", "Ayanami", 2, 1);
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES ("Shinji", "Ikari", 3, null);
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES ("Kaworu", "Nagisa", 4, 3);
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES ("Misato", "Katsuragi", 5, null);
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES ("Ryoji", "Kaji", 2, null);
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES ("Mari", "Makinami", 4, 7);
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES ("Kensuke", "Aida", 1, 2);
