@@ -215,13 +215,4 @@ function firstPrompt() {
   })
   }
 
-  
-
-
-
-
-
-    
-  
-
 firstPrompt();
