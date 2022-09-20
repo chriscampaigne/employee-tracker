@@ -43,19 +43,19 @@ function firstPrompt() {
             break;
         
           case "View Roles":
-            addEmployee();
+            viewRoles();
             break;
   
           case "Add Employee":
-            removeEmployees();
+            addEmployee();
             break;
   
-          case " Add Deparment":
+          case "Add Department":
             addDepartment();
             break;
 
-          case " Add Role":
-            addDepartment();
+          case "Add Role":
+            addRole();
             break;
   
           case "Update Employee Role":
@@ -81,6 +81,14 @@ function firstPrompt() {
   };
   function viewDepartments() {
   con.query(`SELECT * FROM department`, (err,rows) => {
+    if(err) throw err;
+    console.log('Data received');
+    console.table(rows);
+    firstPrompt();
+  })
+  };
+  function viewRoles() {
+  con.query(`SELECT * FROM role`, (err,rows) => {
     if(err) throw err;
     console.log('Data received');
     console.table(rows);
@@ -122,6 +130,61 @@ function firstPrompt() {
         firstPrompt();
       })
     })
+  };
+
+  function addDepartment() {
+    inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "newdepartment",
+        message: "What is the new department?",
+      },
+     
+    ])
+    .then(answers => {
+      con.query('INSERT INTO department (name) VALUES (?)',
+      [answers.newdepartment], (err,rows)=>{
+        if(err) throw err;
+        console.log('Data received');
+        console.table(rows);
+        firstPrompt();
+      })
+    })
+
+  };
+
+``
+  function addRole () {
+    inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "newrole",
+        message: "What is the new role?",
+      },
+      {
+        type: "input",
+        name: "newsalary",
+        message: "What is the salary of the role?",
+      },
+      {
+        type: "input",
+        name: "departmentrole",
+        message: "What department is the new role in?",
+      },
+    ])
+    .then(answers => {
+      con.query('INSERT INTO role(title,salary,department_id) VALUES (?,?,?)',
+      [answers.newrole,answers.newsalary,answers.departmentrole], (err,rows)=>{
+        if(err) throw err;
+        console.log('Data received');
+        console.table(rows);
+        firstPrompt();
+
+      })
+    })
+
   }
 
   function updateEmployeeRole () {
@@ -152,6 +215,7 @@ function firstPrompt() {
   })
   }
 
+  
 
 
 
